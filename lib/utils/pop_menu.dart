@@ -10,53 +10,53 @@ class PopMenu{
     switch(tabb){
       case Tabb.group:
         return [
-          const PopupMenuItem<int>(
-            value: 0,
+          const PopupMenuItem<String>(
+            value: 'Settings',
             child: Text("Settings"),
           ),
         ];
       case Tabb.chats:
         return [
-          const PopupMenuItem<int>(
-            value: 0,
+          const PopupMenuItem<String>(
+            value: 'NewGroup',
             child: Text("New group"),
           ),
-          const PopupMenuItem<int>(
-            value: 0,
+          const PopupMenuItem<String>(
+            value: 'NewBroadCast',
             child: Text("New broadcast"),
           ),
-          const PopupMenuItem<int>(
-            value: 0,
+          const PopupMenuItem<String>(
+            value: 'WhatsAppWeb',
             child: Text("WhatsApp Web"),
           ),
-          const PopupMenuItem<int>(
-            value: 0,
+          const PopupMenuItem<String>(
+            value: 'Starred',
             child: Text("Starred messages"),
           ),
-          const PopupMenuItem<int>(
-            value: 1,
+          const PopupMenuItem<String>(
+            value: 'Settings',
             child: Text("Settings"),
           ),
         ];
       case Tabb.status:
         return [
-          const PopupMenuItem<int>(
-            value: 0,
+          const PopupMenuItem<String>(
+            value: 'StatusPrivacy',
             child: Text("Status privacy"),
           ),
-          const PopupMenuItem<int>(
-            value: 1,
+          const PopupMenuItem<String>(
+            value: 'Settings',
             child: Text("Settings"),
           ),
         ];
       case Tabb.calls:
         return [
-          const PopupMenuItem<int>(
-            value: 0,
-            child: Text("Calls"),
+          const PopupMenuItem<String>(
+            value: 'logs',
+            child: Text("Call logs"),
           ),
-          const PopupMenuItem<int>(
-            value: 1,
+          const PopupMenuItem<String>(
+            value: 'Settings',
             child: Text("Settings"),
           ),
         ];
