@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/whatsapp_home_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:whatsapp_clone/view_model/chat_listvm.dart';
 
 void main() async{
 
@@ -11,9 +13,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'WhatsApp clone',
-      home: HomeScreen(),
+    return ChangeNotifierProvider(
+      create: (BuildContext context) => ChatListViewModel(),
+      child: MaterialApp(
+        title: 'WhatsApp clone',
+        home: HomeScreen(),
+      ),
     );
   }
 }
