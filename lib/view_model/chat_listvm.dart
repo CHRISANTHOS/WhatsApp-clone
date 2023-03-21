@@ -8,7 +8,7 @@ class ChatListViewModel extends ChangeNotifier{
   List<ChatViewModel> chats = [];
 
   Future<void> getChats()async{
-    List<ChatModel> chatModels = await DataServices().readJson();
+    List<ChatModel> chatModels = await DataServices().readChatJson();
     chats = chatModels.map((chat) => ChatViewModel(chat: chat)).toList();
     notifyListeners();
   }

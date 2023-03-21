@@ -1,0 +1,34 @@
+[
+  {
+    "user": "mummy",
+    "isViewed": false
+  },
+  {
+    "user": "emma",
+    "isViewed": false
+  },
+  {
+    "user": "daddy",
+    "isViewed": true
+  },
+  {
+    "user": "luchi",
+    "isViewed": false
+  },
+  {
+    "user": "kcee",
+    "isViewed": true
+  },
+  {
+    "user": "uncle g",
+    "isViewed": true
+  },
+  {
+    "user": "chi",
+    "isViewed": false
+  },
+  {
+    "user": "kenneth",
+    "isViewed": true
+  }
+]
