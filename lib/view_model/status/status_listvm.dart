@@ -8,15 +8,23 @@ class StatusListViewModel extends ChangeNotifier{
   List<StatusViewModel> viewedStatuses = [];
   List<StatusViewModel> unViewedStatuses = [];
 
-  void getStatusUpload()async{
+  Future<void> getStatusUpload()async{
     List<StatusModel> statusModels = await DataServices().readStatusJson();
-    statusModels.map((status) {
+    for(StatusModel status in statusModels){
       if(status.isViewed == false){
         unViewedStatuses.add(StatusViewModel(statusModel: status));
       }else{
         viewedStatuses.add(StatusViewModel(statusModel: status));
       }
-    });
+    }
+    notifyListeners();
+  }
+
+  void justViewed(int index){
+    unViewedStatuses[index].isViewed == true;
+    StatusViewModel viewed = unViewedStatuses.removeAt(index);
+    viewedStatuses.add(viewed);
+    notifyListeners();
   }
 
 }

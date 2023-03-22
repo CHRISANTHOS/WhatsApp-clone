@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/whatsapp_home_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/view_model/chat_listvm.dart';
+import 'package:whatsapp_clone/view_model/status/status_listvm.dart';
 
 void main() async{
 
@@ -13,12 +14,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (BuildContext context) => ChatListViewModel(),
-      child: MaterialApp(
-        title: 'WhatsApp clone',
-        home: HomeScreen(),
-      ),
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (BuildContext context) => ChatListViewModel(),),
+      ChangeNotifierProvider(create: (BuildContext context) => StatusListViewModel())
+    ],
+    child: MaterialApp(
+      title: 'WhatsApp clone',
+      home: HomeScreen(),
+    ),
     );
   }
 }
