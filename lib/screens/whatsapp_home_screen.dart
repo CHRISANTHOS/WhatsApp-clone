@@ -143,7 +143,9 @@ class _HomeScreenState extends State<HomeScreen>
                     ),
                     FloatingActionButton(
                       heroTag: 'cam',
-                      onPressed: () {},
+                      onPressed: () {
+                        _showCamera();
+                      },
                       backgroundColor: const Color(0xff25D366),
                       child: const Icon(
                         Icons.camera_alt,

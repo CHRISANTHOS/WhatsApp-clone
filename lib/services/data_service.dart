@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:whatsapp_clone/models/chat_model.dart';
 import 'package:whatsapp_clone/models/status_model.dart';
+import 'package:whatsapp_clone/models/calls_model.dart';
 import 'package:flutter/services.dart';
 
 class DataServices{
@@ -25,6 +26,17 @@ class DataServices{
     final response = await loadStatusJson();
     Iterable result = jsonDecode(response);
     return result.map((chat) => StatusModel.fromJson(chat)).toList();
+  }
+
+  Future<String> loadCallsJson()async{
+    final jsonString = await rootBundle.loadString('assets/calls_data.json');
+    return jsonString;
+  }
+
+  Future<List<CallsModel>> readCallsJson()async{
+    final response = await loadCallsJson();
+    Iterable result = jsonDecode(response);
+    return result.map((call) => CallsModel.fromJson(call)).toList();
   }
 
 }
