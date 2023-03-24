@@ -36,7 +36,7 @@ class _StatusPageState extends State<StatusPage> {
                 width: 50,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
-                  border: Border.all(color: Colors.blueAccent)
+                  border: Border.all(color: Colors.blueAccent, width: 2)
                 ),
                 child: const Icon(Icons.person),
               ),
@@ -58,7 +58,7 @@ class _StatusPageState extends State<StatusPage> {
                 width: 50,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
-                    border: Border.all(color: Colors.grey)
+                    border: Border.all(color: Colors.grey, width: 2)
                 ),
                 child: const Icon(Icons.person),
               ),
@@ -79,7 +79,7 @@ class _StatusPageState extends State<StatusPage> {
                   CircleAvatar(
                     radius: 22,
                     backgroundColor: Colors.black38,
-                    child: Icon(Icons.person),
+                    child: Icon(Icons.person, color: Colors.white,),
                   ),
                   Positioned(
                     bottom: 0,
@@ -92,7 +92,7 @@ class _StatusPageState extends State<StatusPage> {
                   ),
                 ],
               ),
-              title: const Text('Your status update'),
+              title: const Text('Your status update', style: TextStyle(fontWeight: FontWeight.bold),),
               subtitle: const Text('Tap to add status update'),
             ),
             const SizedBox(height: 10,),

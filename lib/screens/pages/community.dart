@@ -8,18 +8,18 @@ class CommunityPage extends StatefulWidget {
 class _CommunityPageState extends State<CommunityPage> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Column(
-        children: [
-          ListTile(
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: ListTile(
             leading: Stack(
               children: [
                 Container(
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(10),
                     color: Colors.black45
                   ),
                   child: const Icon(Icons.group, color: Colors.white,),
@@ -33,19 +33,21 @@ class _CommunityPageState extends State<CommunityPage> {
                     child: Icon(
                       Icons.add,
                       size: 15,
+                      color: Colors.white,
                     ),
                   ),
                 ),
               ],
             ),
-            title: const Text('New community'),
+            title: const Text('New community', style: TextStyle(fontWeight: FontWeight.bold),),
           ),
-          Container(
-            height: 10,
-            color: Colors.grey,
-          )
-        ],
-      ),
+        ),
+        const SizedBox(height: 5,),
+        Container(
+          height: 10,
+          color: Colors.grey[300],
+        )
+      ],
     );
   }
 }
