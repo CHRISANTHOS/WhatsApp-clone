@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/view_model/chat_listvm.dart';
+import 'package:whatsapp_clone/screens/pages/individual_chat.dart';
 
 class Chatpage extends StatefulWidget {
 
@@ -23,6 +24,9 @@ class _ChatpageState extends State<Chatpage> {
         itemCount: vm.chats.length,
         itemBuilder: (context, index){
           return ListTile(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => IndividualPage(chat: vm.chats[index])));
+            },
             leading: CircleAvatar(
               radius: 23,
               child: vm.chats[index].picture == '' ? Icon(Icons.person) : Image.asset(vm.chats[index].picture),
