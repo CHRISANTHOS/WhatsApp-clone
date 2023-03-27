@@ -23,7 +23,9 @@ class _IndividualPageState extends State<IndividualPage> {
           color: Colors.grey,
         ),
         Scaffold(
+          backgroundColor: Colors.transparent,
           appBar: AppBar(
+            backgroundColor: const Color(0xff25D366),
             leading: IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.arrow_back_ios)),
             title: Row(
               children: [
@@ -40,6 +42,17 @@ class _IndividualPageState extends State<IndividualPage> {
                 )
               ],
             ),
+            actions: [
+              IconButton(onPressed: (){}, icon: const Icon(Icons.video_call)),
+              IconButton(onPressed: (){}, icon: const Icon(Icons.call)),
+              PopupMenuButton(itemBuilder: (context){
+                return [
+                  const PopupMenuItem<String>(
+                      value: 'settings',
+                      child: Text('Settings'))
+                ];
+              })
+            ],
           ),
         )
       ],
